@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет о результатах опроса</title>
+</head>
+<body>
+    <h1>Отчет о результатах опроса</h1>
+
+    <h2>Кластеризация оценок</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Вопрос</th>
+                <th>Ответ</th>
+                <th>Кластер</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in clusters %}
+                <tr>
+                    <td>{{ row['question'] }}</td>
+                    <td>{{ row['answer'] }}</td>
+                    <td>{{ row['cluster'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Обработанные комментарии</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Вопрос</th>
+                <th>Комментарий</th>
+                <th>Обработанный комментарий</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in comments %}
+                <tr>
+                    <td>{{ row['question'] }}</td>
+                    <td>{{ row['comment'] }}</td>
+                    <td>{{ row['processed_comment'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

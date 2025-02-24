@@ -1,0 +1,9 @@
+aiogram
+asyncpg
+python-dotenv
+matplotlib
+seaborn
+requests
+pdfkit
+jinja2
+scikit-learn

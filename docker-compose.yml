@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: survey_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: survey_db
+      POSTGRES_USER: survey_user
+      POSTGRES_PASSWORD: survey_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Указываем путь до скрипта
+
+  bot:
+    build: .
+    container_name: survey_bot
+    restart: always
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DATABASE_URL=postgresql://survey_user:survey_pass@survey_postgres:5432/survey_db
+      - YANDEX_GPT_API_KEY=${YANDEX_GPT_API_KEY}
+      - YANDEX_FOLDER_ID=${YANDEX_FOLDER_ID}
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
