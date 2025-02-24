@@ -48,9 +48,8 @@ docker-compose up -d
 
 Пример .env файла:
 
-TELEGRAM_BOT_TOKEN=<ваш_токен>
-POSTGRES_USER=feedback
-POSTGRES_PASSWORD=yourpassword
+BOT_TOKEN=<ваш_токен>
+DATABASE_URL=<адрес бд>
 YANDEX_GPT_API_KEY=<api_ключ>
 X_FOLDER_ID=<folder_id>
 
