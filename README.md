@@ -1,5 +1,4 @@
 #[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Telegram+survey+bot)](https://git.io/typing-svg) 
-telegram_survey_bot
 📊 Система автоматизации сбора и анализа обратной связи студентов
 
 📌 Описание проекта
